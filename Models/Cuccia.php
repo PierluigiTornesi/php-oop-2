@@ -15,6 +15,16 @@ class Cuccia extends Prodotto
         $this->luogo_uso = $_luogo_uso;
         $this->dimensione = $_dimensione;
     }
+    
+    public function get_materiale(){
+        return $this->materiale;
+    }
+    public function get_luogo_uso(){
+        return $this->luogo_uso;
+    }
+    public function get_dimensione(){
+        return $this->dimensione;
+    }
 
 }
 

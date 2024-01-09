@@ -14,6 +14,14 @@ class Gioco extends Prodotto
         $this->utilizzo = $_utilizzo;
     }
 
+    public function get_etá_min(){
+        return $this->etá_min;
+    }
+
+    public function get_utilizzo(){
+        return $this->utilizzo;
+    }
+
 }
 
 

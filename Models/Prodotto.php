@@ -15,10 +15,16 @@ class Prodotto extends Categoria
         $this->prezzo = $_prezzo;
     }
 
-    public function print_info()
-    {
-        return 'Titolo: ' . $this->titolo . ' , prezzo : ' . $this->prezzo;
+    public function get_titolo(){
+        return $this->titolo;
     }
+    public function get_prezzo(){
+        return $this->prezzo;
+    }
+    public function get_path_img(){
+        return $this->path_img;
+    }
+
 }
 
 

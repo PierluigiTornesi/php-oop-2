@@ -14,6 +14,13 @@ class Cibo extends Prodotto
         $this->ingrediente = $_ingrediente;
     }
 
+    public function get_data_scadenza(){
+        return $this->data_scadenza;
+    }
+
+    public function get_ingrediente(){
+        return $this->ingrediente;
+    }
 }
 
 
