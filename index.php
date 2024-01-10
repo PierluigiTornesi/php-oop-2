@@ -118,6 +118,7 @@ require_once __DIR__ . '/database/db.php';
             </div>
         </div>
 
+        <!-- cuccia con trait valido -->
         <div class="card mb-3  mt-4" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-1">
@@ -139,11 +140,57 @@ require_once __DIR__ . '/database/db.php';
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Materiale cuccia : <?php echo $cuccia->get_materiale() ?> </li>
+                        <li class="list-group-item">Peso cuccia : 
+                            <?php try{
+                                $result = $cuccia->controlloPeso(10);
+                            }catch(Exception $e){
+                                echo 'Errore , peso non valido';
+                            }  ?> 
+                        </li>
                         <li class="list-group-item">Prezzo : <?php echo $cuccia->get_prezzo() ?> </li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <img src='./assets/img/<?php echo $cuccia->get_path_img() ?>' class="w-100 " alt="...">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- cuccia con trait non valido -->
+        <div class="card mb-3  mt-4" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-1">
+                    <!-- icona categoria -->
+                    <img src='./assets/img/<?php echo $cuccia2->icon_category ?>' class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <!-- nome del prodotto -->
+                            <?php echo $cuccia2->get_titolo() ?>
+                            per
+                            <!-- categoria del prodotto -->
+                            <?php echo $cuccia2->category; ?>
+                        </h5>
+                        <!-- descrizione prodotto -->
+                        <p class="card-text">Cuccia per <?php echo $cuccia2->category ?> da usare <?php echo $cuccia2->get_luogo_uso() ?> di dimensione
+                        <?php echo $cuccia2->get_dimensione() ?> .</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Materiale cuccia : <?php echo $cuccia2->get_materiale() ?> </li>
+                        <li class="list-group-item">Peso cuccia : 
+                            <?php try{
+                                $result = $cuccia2->controlloPeso(-10);
+                            }catch(Exception $e){
+                                echo 'Peso non disponibile';
+                            }  ?> 
+                        </li>
+                        <li class="list-group-item">Prezzo : <?php echo $cuccia2->get_prezzo() ?> </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <img src='./assets/img/<?php echo $cuccia2->get_path_img() ?>' class="w-100 " alt="...">
                 </div>
             </div>
         </div>

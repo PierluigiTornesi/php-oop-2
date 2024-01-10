@@ -26,6 +26,15 @@ class Cuccia extends Prodotto
         return $this->dimensione;
     }
 
+    public function controlloPeso($_controllo_peso)
+    {
+        if($_controllo_peso > 0){
+            echo 'Il peso della cuccia é di ' . $_controllo_peso . ' KG'; 
+        }else{
+            throw new Exception("Il peso inserito non é valido");
+        }
+    }
+
 }
 
 
