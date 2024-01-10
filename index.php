@@ -69,7 +69,7 @@ require_once __DIR__ . '/database/db.php';
                             <?php echo $gioco->category; ?>
                         </h5>
                         <!-- descrizione gioco -->
-                        <p class="card-text">Laser per i gatti da usare <?php echo $gioco->get_utilizzo()?> per gatti di minimo <?php echo $gioco->get_etá_min() ?>.</p>
+                        <p class="card-text">Laser per i gatti da usare <?php echo $gioco->get_utilizzo()?> per gatti di minimo <?php echo $gioco->get_eta_min() ?>.</p>
                     </div>
                     <!-- prezzo gioco -->
                     <ul class="list-group list-group-flush">
